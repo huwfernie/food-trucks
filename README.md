@@ -10,7 +10,25 @@ a browser window should open and redirect to the index page at `http://localhost
 
 The API will be accessible at `http://localhost:4000/api`
 
+Example api calls:
 
-logo is from :
+GET
+http://localhost:4000/api/foodTrucksShowAll
 
- Check out the new logo that I created on <a href="http://logomakr.com" title="Logo Maker">LogoMaker.com</a> https://logomakr.com/8MJ4Fl8MJ4Fl
+POST
+http://localhost:4000/api/foodTrucks
+{
+	"name": "test_1"
+}
+
+GET
+http://localhost:4000/api/foodTrucks/5bab60e191369058c9e662a0
+
+PUT
+http://localhost:4000/api/foodTrucks/5bab60e191369058c9e662a0
+{
+	"name": "test_1_updated"
+}
+
+DELETE
+http://localhost:4000/api/foodTrucks/5bab545b604ffb532c2dd962
