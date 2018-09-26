@@ -13,10 +13,10 @@ const browserSync      = require('browser-sync');
 const config           = require('../package').gulp;
 const replace          = require('gulp-replace');
 
-const fetchVendorJs = () => {
-  return gulp.src(bowerFiles(config.selectors.js))
-    .pipe(concat(config.vendor.js));
-};
+// const fetchVendorJs = () => {
+//   return gulp.src(bowerFiles(config.selectors.js))
+//     .pipe(concat(config.vendor.js));
+// };
 
 const validateLocalJs = () => {
   return gulp.src(`${config.src.js}${config.selectors.js}`)
@@ -34,7 +34,7 @@ const fetchLocalJs = () => {
 
 const buildJs = () => {
   return eventStream.merge(
-    fetchVendorJs(),
+    // fetchVendorJs(),
     fetchLocalJs()
   )
   .pipe(order([config.vendor.js, config.selectors.js]))

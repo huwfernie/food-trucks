@@ -9,9 +9,9 @@ const localFonts = () => {
   return gulp.src(`${config.src.fonts}${config.selectors.fonts}`);
 };
 
-const vendorFonts = () => {
-  return gulp.src(bowerFiles(config.selectors.fonts));
-};
+// const vendorFonts = () => {
+//   return gulp.src(bowerFiles(config.selectors.fonts));
+// };
 
 const cleanFonts = () => {
   return gulp.src(config.dest.fonts, { read: false })
@@ -20,10 +20,10 @@ const cleanFonts = () => {
 
 const copyFonts = () => {
   return eventStream.merge(
-    localFonts(),
-    vendorFonts()
+    localFonts()//,
+    // vendorFonts()
   )
-  .pipe(gulp.dest(config.dest.fonts));
+    .pipe(gulp.dest(config.dest.fonts));
 };
 
 const buildFonts = () => {
@@ -31,7 +31,7 @@ const buildFonts = () => {
     cleanFonts(),
     copyFonts()
   )
-  .pipe(browserSync.stream());
+    .pipe(browserSync.stream());
 };
 
 gulp.task('build-fonts', buildFonts);

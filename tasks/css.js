@@ -13,11 +13,11 @@ const gulpIf           = require('gulp-if');
 const browserSync      = require('browser-sync');
 const config           = require('../package').gulp;
 
-const fetchVendorCss = () => {
-  return gulp.src(bowerFiles(config.selectors.css))
-    .pipe(stripCssComments()) // Removing the sourcemaps
-    .pipe(concat(config.vendor.css));
-};
+// const fetchVendorCss = () => {
+//   return gulp.src(bowerFiles(config.selectors.css))
+//     .pipe(stripCssComments()) // Removing the sourcemaps
+//     .pipe(concat(config.vendor.css));
+// };
 
 const fetchLocalCss = () => {
   return gulp.src(`${config.src.scss}${config.main.scss}`)
@@ -27,10 +27,11 @@ const fetchLocalCss = () => {
 };
 
 const buildCss = () => {
-  const vendorCss = fetchVendorCss();
+  // const vendorCss = fetchVendorCss();
   const localCss  = fetchLocalCss();
 
-  return eventStream.merge(vendorCss, localCss)
+  // return eventStream.merge(vendorCss, localCss)
+  return eventStream.merge(localCss)
     .pipe(order([config.vendor.css,config.output.css]))
     .pipe(concat(config.output.css))
     .pipe(sourcemaps.init())

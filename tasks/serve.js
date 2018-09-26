@@ -10,8 +10,8 @@ const serve = () => {
     proxy: 'http://localhost:4000',
     files: ['public/**/*.*'],
     browser: 'google chrome',
-    port: 7000,
-    reloadDelay: 1000
+    port: 4000,
+    reloadDelay: 1500
   });
 
   return nodemon({
