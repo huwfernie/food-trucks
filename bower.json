@@ -1,0 +1,19 @@
+{
+  "name": "food-truck-finder",
+  "description": "post or find food trucks near you",
+  "main": "server.js",
+  "authors": [
+    "huwfernie <huw.fernie@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  }
+}
