@@ -1,8 +1,8 @@
 const gulp = require('gulp');
 
 const defaultTask = () => {
-  return gulp.start(['serve', 'watch']);
+  return gulp.start(['serve']);
 };
 
-gulp.task('default', ['build-app'], defaultTask);
+gulp.task('default', [], defaultTask);
 module.exports = defaultTask;
