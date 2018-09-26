@@ -9,7 +9,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "postinstall": "gulp",
+    "postinstall": "",
     "start": "node server.js"
   },
   "author": "Huw Fernie",
