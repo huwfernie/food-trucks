@@ -61,6 +61,8 @@
     "express": "^4.15.2",
     "mongoose": "^4.8.6",
     "morgan": "^1.8.1",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
     "request": "^2.81.0",
     "request-promise": "^4.2.1"
   },
