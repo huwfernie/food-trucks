@@ -13,7 +13,13 @@ module.exports = {
   resolve: { extensions: ['.js', '.scss', '.css'] },
   devServer: {
     contentBase: path.join(__dirname, '../public/'),
-    port: 4000
+    port: 3000,
+    proxy: {
+      '^/api/*': {
+        target: 'http://localhost:8080:api/',
+        secure: 'false'
+      }
+    }
   },
   module: {
     rules: [

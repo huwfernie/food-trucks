@@ -11,7 +11,10 @@
   "scripts": {
     "postinstall": "build",
     "build": "webpack",
-    "start": "webpack-dev-server --config './webpack.config.js'"
+    "start": "webpack --progress --colors",
+    "dev": "npm-run-all --parallel dev-server dev-client",
+    "dev-server": "nodemon ./server.js localhost 8080",
+    "dev-client": "webpack-dev-server --port 3000"
   },
   "author": "Huw Fernie",
   "license": "ISC",
@@ -67,6 +70,7 @@
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.3",
     "node-sass": "^4.9.3",
+    "nodemon": "^1.18.4",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.0",
     "webpack": "^4.20.2",
