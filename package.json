@@ -1,15 +1,16 @@
 {
   "name": "tdd-express-api",
   "version": "1.0.0",
+  "private": "true",
   "engines": {
     "node": "8.12.0",
     "npm": "6.4.1"
   },
   "repository": "gitHub",
   "description": "",
-  "main": "server.js",
   "scripts": {
-    "postinstall": "gulp deploy",
+    "postinstall": "webpack --config webpack.config.js",
+    "build": "webpack",
     "start": "node server.js"
   },
   "author": "Huw Fernie",
@@ -62,14 +63,12 @@
     "request-promise": "^4.2.1"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^6.0.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-htmlmin": "^5.0.1",
-    "gulp-if": "^2.0.2",
-    "gulp-inject": "^4.3.2",
-    "gulp-nodemon": "^2.2.1",
-    "gulp-sass": "^4.0.1",
-    "nodemon": "^1.18.4"
+    "css-loader": "^1.0.0",
+    "mini-css-extract-plugin": "^0.4.3",
+    "node-sass": "^4.9.3",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.0",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
   }
 }

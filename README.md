@@ -4,7 +4,10 @@ to install or make changes
 
 run `$ npm i`
 then `$ node db/seeds`
-then `$ gulp`
+
+Gulp has been replaced with webpack to get ready for react.
+
+run `$ npm run build` to build the project.
 
 a browser window should open and redirect to the index page at `http://localhost:4000`
 
