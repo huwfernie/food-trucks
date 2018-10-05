@@ -1,11 +1,19 @@
 const path = require('path');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
+  mode: 'development',
   entry: './src/js/app.js',
   output: {
-    filename: 'app.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'public')
+  },
+  resolve: { extensions: ['.js', '.scss', '.css'] },
+  devServer: {
+    contentBase: path.join(__dirname, '../public/'),
+    port: 4000
   },
   module: {
     rules: [
@@ -14,11 +22,7 @@ module.exports = {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-            options: {
-              // you can specify a publicPath here
-              // by default it use publicPath in webpackOptions.output
-              publicPath: '../'
-            }
+            options: {}
           },
           'css-loader','sass-loader'
         ]
@@ -26,6 +30,10 @@ module.exports = {
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(['public']),
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
+    }),
     new MiniCssExtractPlugin()
   ]
 };
