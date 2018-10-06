@@ -1,7 +1,6 @@
 {
   "name": "tdd-express-api",
   "version": "1.0.0",
-  "private": "true",
   "engines": {
     "node": "8.12.0",
     "npm": "6.4.1"
@@ -9,51 +8,12 @@
   "repository": "gitHub",
   "description": "",
   "scripts": {
-    "postinstall": "webpack",
-    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "dev": "npm-run-all --parallel dev-server dev-client",
-    "dev-server": "nodemon ./server.js localhost 8080",
-    "dev-client": "webpack-dev-server --port 3000"
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "author": "Huw Fernie",
   "license": "ISC",
-  "gulp": {
-    "srcDir": "src/",
-    "destDir": "public/",
-    "src": {
-      "js": "src/js/",
-      "scss": "src/scss/"
-    },
-    "dest": {
-      "js": "public/js/",
-      "css": "public/css/"
-    },
-    "main": {
-      "js": "app.js",
-      "index": "index.html",
-      "scss": "style.scss",
-      "server": "server.js",
-      "packageJson": "package.json"
-    },
-    "vendor": {
-      "js": "vendor.js",
-      "css": "vendor.css"
-    },
-    "output": {
-      "js": "app.js",
-      "css": "style.css"
-    },
-    "selectors": {
-      "all": "*",
-      "js": "**/*.js",
-      "css": "**/*.css",
-      "scss": "**/*.scss",
-      "html": "**/*.html",
-      "images": "**/*.{png,jpg,jpeg,gif,ico}",
-      "fonts": "**/*.{eot,svg,ttf,woff,woff2}"
-    }
-  },
   "dependencies": {
     "aws-sdk": "^2.74.0",
     "bluebird": "^3.5.0",
@@ -61,22 +21,8 @@
     "express": "^4.15.2",
     "mongoose": "^4.8.6",
     "morgan": "^1.8.1",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
     "request": "^2.81.0",
     "request-promise": "^4.2.1"
   },
-  "devDependencies": {
-    "clean-webpack-plugin": "^0.1.19",
-    "css-loader": "^1.0.0",
-    "html-webpack-plugin": "^3.2.0",
-    "mini-css-extract-plugin": "^0.4.3",
-    "node-sass": "^4.9.3",
-    "nodemon": "^1.18.4",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.0",
-    "webpack": "^4.20.2",
-    "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.9"
-  }
+  "devDependencies": {}
 }

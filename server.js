@@ -23,7 +23,15 @@ app.use(bodyParser.json());
 app.use(customResponses);
 
 app.use('/api', routes);
-app.get('/*', (req, res) => res.sendFile(`${__dirname}/public/index.html`));
+// app.get('/*', (req, res) => res.sendFile(`${__dirname}/public/index.html`));
+
+const path = require('path');
+// Serve static files from the React frontend app
+app.use(express.static(path.join(__dirname, 'client/build')));
+// Anything that doesn't match the above, send back index.html
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/client/build/index.html'));
+});
 
 app.use(errorHandler);
 
