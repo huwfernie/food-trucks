@@ -1,5 +1,7 @@
 food-trucks-app
 
+updated to include node-sass on the front end.
+
 Updated again to use create-react-app for the frontend.
 
 from the root directory, use `$ npm run start`, or better `$ nodemon` to get the backend server running on localhost4000
