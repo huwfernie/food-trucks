@@ -8,6 +8,8 @@ import Logo from './components/logo';
 import Button from './components/button';
 import Info from './components/info';
 
+import Strings from './content/strings';
+
 const AppIndex = () => {
   return (
     <div>
@@ -22,7 +24,8 @@ const DisclaimerComponent = () => {
   return (
     <div>
       <Logo />
-      <Info />
+      <Info text={Strings.warning_text}/>
+      <Button text='OK' link='/foodTrucks' />
     </div>
   );
 }

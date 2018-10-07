@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
+import '../styles/info.scss';
 
-const Info = () => {
-  return <div className='info'>Some information</div>;
-};
+class Info extends Component {
+  render() {
+    return (
+      <div className='info'>{this.props.text}</div>
+    )
+  }
+}
 
 export default Info;
