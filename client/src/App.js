@@ -1,14 +1,7 @@
-import React, { Component } from 'react'
-import './App.scss'
-class App extends Component {
+import React from 'react'
 
-render() {
-    return (
-      <div className="App">
-        <h3>Food Trucks</h3>
-        <p>still nothing here yet.</p>
-      </div>
-    )
-  }
+const App = function() {
+  return <div> Hi! </div>;
 }
+
 export default App

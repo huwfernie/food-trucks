@@ -8,7 +8,35 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+main {
+  width: 100%;
+  max-width: 650px;
+  height: calc(100vh - 10px);
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+  border: 1px dashed blue;
+  padding-top: calc(50vh - 170px);
+}
+
+.logo {
+  border: 1px dashed pink;
+  box-sizing: border-box;
+  height: 100px;
+  width: 100px;
+  margin: 0 auto;
+}
+
+button {
+  display: block;
+  padding: 10px 15px;
+  margin: 5px auto;
+  height: 55px;
+  width: 210px;
+  border-radius: 25px;
+}
+button:hover {
+  background: #fb2b2b;
+  color: #fff;
+  transition: color 0.75s, background 0.7s;
 }
