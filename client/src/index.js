@@ -4,39 +4,19 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import './index.css';
 
-import Logo from './components/logo';
-import Button from './components/button';
-import Info from './components/info';
-
-import Strings from './content/strings';
-
-const AppIndex = () => {
-  return (
-    <div>
-      <Logo />
-      <Button text='Find food' link= '/info' />
-      <Button text='Add a food truck' link="#" />
-    </div>
-  );
-}
-
-const DisclaimerComponent = () => {
-  return (
-    <div>
-      <Logo />
-      <Info text={Strings.warning_text}/>
-      <Button text='OK' link='/foodTrucks' />
-    </div>
-  );
-}
+import AppIndex from './components/index';
+import DisclaimerComponent from './components/disclaimer';
+import FoodTrucks from './components/foodTrucks';
 
 ReactDOM.render(
   <BrowserRouter>
     <div>
       <Switch>
         <Route path="/info" component={ DisclaimerComponent }/>
+        <Route path="/foodTrucks" component={ FoodTrucks }/>
         <Route path="/" component={ AppIndex } />
       </Switch>
     </div>
   </BrowserRouter>,
-  document.getElementById('root'));
+  document.getElementById('root')
+);
