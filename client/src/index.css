@@ -17,6 +17,7 @@ main {
   box-sizing: border-box;
   border: 1px dashed blue;
   padding-top: calc(50vh - 170px);
+  font-size: 20px;
 }
 
 .logo {
@@ -27,6 +28,9 @@ main {
   margin: 0 auto;
 }
 
+a {
+  text-decoration: none;
+}
 button {
   display: block;
   padding: 10px 15px;
@@ -34,6 +38,8 @@ button {
   height: 55px;
   width: 210px;
   border-radius: 25px;
+  font-size: 1em;
+  text-decoration: none;
 }
 button:hover {
   background: #fb2b2b;

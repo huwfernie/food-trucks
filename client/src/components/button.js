@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Button extends Component {
   render() {
     return (
-      <button onClick={this.onButtonClick}>Click</button>
+      <Link to={this.props.link}>
+        <button onClick={this.onButtonClick}>{this.props.text}</button>
+      </Link>
     )
   }
 

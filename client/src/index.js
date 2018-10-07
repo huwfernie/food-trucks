@@ -1,19 +1,39 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import './index.css';
 
 import Logo from './components/logo';
 import Button from './components/button';
+import Info from './components/info';
 
-const App = () => {
+const AppIndex = () => {
   return (
     <div>
       <Logo />
-      <Button />
-      <Button />
+      <Button text='Find food' link= '/info' />
+      <Button text='Add a food truck' link="#" />
     </div>
   );
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const DisclaimerComponent = () => {
+  return (
+    <div>
+      <Logo />
+      <Info />
+    </div>
+  );
+}
+
+ReactDOM.render(
+  <BrowserRouter>
+    <div>
+      <Switch>
+        <Route path="/info" component={ DisclaimerComponent }/>
+        <Route path="/" component={ AppIndex } />
+      </Switch>
+    </div>
+  </BrowserRouter>,
+  document.getElementById('root'));
