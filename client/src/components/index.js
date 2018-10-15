@@ -10,8 +10,8 @@ const AppIndex = () => {
   return (
     <div>
       <Logo />
-      <Button text={Strings.button_find} link= '/info' />
-      <Button text={Strings.button_add} link="#" />
+      <Button text={Strings.button_find} link= '/warning-search' />
+      <Button text={Strings.button_add} link="/warning-upload" />
       <Copy copy={Strings.index_text} />
     </div>
   );
