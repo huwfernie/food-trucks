@@ -10,8 +10,8 @@ const DisclaimerComponent = () => {
   return (
     <div>
       <Logo />
-      <Info text={Strings.warning_text}/>
-      <Button text='OK' link='/foodTrucks' />
+      <Info text={Strings.warning_search}/>
+      <Button text={Strings.button_agree} link='/foodTrucks' />
     </div>
   );
 }

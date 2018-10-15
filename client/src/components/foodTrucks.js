@@ -1,16 +1,22 @@
 import React from 'react';
 
-// import Logo from '../atoms/logo';
-// import Button from '../atoms/button';
-// import Info from '../atoms/info';
+import Walker from '../atoms/walker';
+import Button from '../atoms/button';
+import GoogleMap from '../atoms/map';
+import Results from '../atoms/results';
 
-// import Strings from '../content/strings';
+import Strings from '../content/strings';
+// import Data from '../content/data';
 
 const FoodTrucks = () => {
   return (
     <div>
-      <h1>This is where a map would usually go</h1>
-      <p>with pins</p>
+      <Walker />
+      <Button link="" text={Strings.button_profile}/>
+      <GoogleMap />
+      <Button link="" text={Strings.button_zoom_in}/>
+      <Button link="" text={Strings.button_zoom_out}/>
+      <Results number="2" />
     </div>
   );
 }
