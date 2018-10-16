@@ -5,7 +5,7 @@ import Copy from '../atoms/copy';
 
 const AppIndex = () => {
   return (
-    <div>
+    <div className="camera">
       <Button text="Click" link="" />
       <Copy copy=":Camera:" />
     </div>

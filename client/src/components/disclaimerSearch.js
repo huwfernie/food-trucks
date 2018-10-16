@@ -8,7 +8,7 @@ import Strings from '../content/strings';
 
 const DisclaimerSearch = () => {
   return (
-    <div>
+    <div className="disclaimerSearch">
       <Logo />
       <Info text={Strings.warning_search}/>
       <Button text={Strings.button_agree} link='/foodTrucks' />

@@ -5,7 +5,7 @@ class Button extends Component {
   render() {
     return (
       <Link to={this.props.link}>
-        <button onClick={this.onButtonClick}>{this.props.text}</button>
+        <button className={this.props.className} onClick={this.onButtonClick}>{this.props.text}</button>
       </Link>
     )
   }

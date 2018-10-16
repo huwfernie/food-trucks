@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import './index.css';
+import './styles/index.scss';
 
 import AppIndex from './components/index';
 import DisclaimerUpload from './components/disclaimerUpload';

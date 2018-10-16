@@ -1,0 +1,29 @@
+.disclaimerSearch, .disclaimerUpload {
+  padding: 2em;
+  max-width: 280px;
+  margin: 0 auto;
+
+  width: 100%;
+  max-width: 650px;
+  height: 100vh;
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+  border: 1px dashed red;
+  padding-top: calc(50vh - 170px);
+  font-size: 20px;
+
+  .info {
+    padding-top: 3em;
+    margin: 0 auto;
+    max-width: 450px;
+  }
+
+  button {
+    position: absolute;
+    bottom: 4em;
+    left: 0;
+    right: 0;
+
+  }
+}

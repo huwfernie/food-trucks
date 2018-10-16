@@ -10,12 +10,12 @@ import Strings from '../content/strings';
 
 const FoodTrucks = () => {
   return (
-    <div>
+    <div className="foodTrucks">
       <Walker />
-      <Button link="" text={Strings.button_profile}/>
+      <Button className="layoutButton" link="" text={Strings.button_profile}/>
       <GoogleMap />
-      <Button link="" text={Strings.button_zoom_in}/>
-      <Button link="" text={Strings.button_zoom_out}/>
+      <Button className="zoomButton" link="" text={Strings.button_zoom_in}/>
+      <Button className="zoomButton" link="" text={Strings.button_zoom_out}/>
       <Results number="2" />
     </div>
   );

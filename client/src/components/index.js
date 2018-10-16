@@ -8,7 +8,7 @@ import Strings from '../content/strings';
 
 const AppIndex = () => {
   return (
-    <div>
+    <div className="index">
       <Logo />
       <Button text={Strings.button_find} link= '/warning-search' />
       <Button text={Strings.button_add} link="/warning-upload" />

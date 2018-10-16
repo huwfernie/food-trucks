@@ -8,7 +8,7 @@ import Strings from '../content/strings';
 
 const DisclaimerUpload = () => {
   return (
-    <div>
+    <div className="disclaimerUpload" >
       <Logo />
       <Info text={Strings.warning_upload}/>
       <Button text={Strings.button_agree} link='/camera' />
