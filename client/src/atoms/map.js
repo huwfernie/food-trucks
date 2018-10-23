@@ -19,6 +19,18 @@ class Map extends Component {
     };
   }
 
+  componentDidMount() {
+    console.log(navigator.geolocation.getCurrentPosition);
+
+    navigator.geolocation.getCurrentPosition((result) => {
+      console.log(result.coords.latitude);
+      this.setState({
+        lat: result.coords.latitude,
+        lng: result.coords.longitude
+      });
+    })
+  }
+
   render() {
     const {lat, lng} = this.state;
 
@@ -44,3 +56,49 @@ class Map extends Component {
 
 
 export default Map;
+//
+//
+// const AirbnbMap = withGoogleMap(props => (
+//   <GoogleMap
+//     defaultCenter={props.center}
+//     defaultZoom={props.zoom} />
+// ));
+//
+// class Map extends Component {
+//   constructor() {
+//     super();
+//     let personProfile = this.state = {
+//       name: "Bob",
+//       skill: "Art Designer",
+//       location: "LA"
+//     }
+//   }
+//
+//   componentDidMount() {
+//     setTimeout(() => {
+//       this.setState({name: "Frank"});
+//     }, 1000)
+//
+//     console.log(navigator.geolocation.getCurrentPosition);
+//
+//     navigator.geolocation.getCurrentPosition((result) => {
+//       console.log(result.coords.latitude);
+//       this.setState({name: result.coords.latitude});
+//     })
+//   }
+//
+//   render() {
+//     return (
+//       <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+//         <ul>
+//           <li> {this.state.name} </li>
+//           <li> {this.state.skill} </li>
+//           <li> {this.state.location} </li>
+//         </ul>
+//       </div>
+//     );
+//   }
+// }
+//
+//
+// export default Map;

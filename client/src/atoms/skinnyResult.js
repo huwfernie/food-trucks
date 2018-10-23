@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class skinnyResut extends Component {
+class SkinnyResut extends Component {
  render() {
     return (
       <div className='smallCard'>
@@ -13,4 +13,4 @@ class skinnyResut extends Component {
   }
 }
 
-export default skinnyResut;
+export default SkinnyResut;
