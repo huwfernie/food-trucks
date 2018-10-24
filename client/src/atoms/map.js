@@ -1,59 +1,66 @@
 import React, { Component } from 'react';
-import { withGoogleMap, GoogleMap } from 'react-google-maps'
+import { withGoogleMap, GoogleMap } from 'react-google-maps';
 
 const AirbnbMap = withGoogleMap(props => (
   <GoogleMap
-    defaultCenter={props.center}
-    defaultZoom={props.zoom} />
+    defaultCenter={props.defaultCenter}
+    center={props.center}
+    defaultZoom={props.zoom}
+  />
 ));
 
 class Map extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
-    this.zoom = 7
+    this.zoom = 7;
 
     this.state = {
-      lat: 50.0515918,
-      lng: 19.9357531
+      default: {
+        lat: 44,
+        lng: 33
+      },
+
+      lat: 0,
+      lng: 0
     };
   }
 
   componentDidMount() {
     console.log(navigator.geolocation.getCurrentPosition);
 
-    navigator.geolocation.getCurrentPosition((result) => {
+    navigator.geolocation.getCurrentPosition(result => {
       console.log(result.coords.latitude);
+      console.log(result.coords.longitude);
       this.setState({
         lat: result.coords.latitude,
         lng: result.coords.longitude
       });
-    })
+    });
   }
 
   render() {
-    const {lat, lng} = this.state;
+    const { lat, lng } = this.state;
 
-    return(
-      <div style={{width: `750px`, height: `750px`}}>
+    return (
+      <div style={{ width: `750px`, height: `750px` }}>
         <AirbnbMap
+          defaultCenter={{
+            lat: this.state.default.lat,
+            lng: this.state.default.lng
+          }}
           center={{
             lat: lat,
             lng: lng
           }}
-          zoom={this.zoom}
-          containerElement={
-            <div style={{ height: `100%` }} />
-          }
-          mapElement={
-            <div style={{ height: `100%` }} />
-          }
+          zoom={7}
+          containerElement={<div style={{ height: `100%` }} />}
+          mapElement={<div style={{ height: `100%` }} />}
         />
       </div>
     );
   }
 }
-
 
 export default Map;
 //
