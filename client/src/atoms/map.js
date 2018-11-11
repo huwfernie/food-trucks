@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withGoogleMap, GoogleMap, Circle } from 'react-google-maps';
 
-const AirbnbMap = withGoogleMap(props => (
+const BaseMap = withGoogleMap(props => (
   <GoogleMap
     defaultCenter={props.defaultCenter}
     center={props.center}
@@ -58,8 +58,8 @@ class Map extends Component {
     const { lat, lng, zoo } = this.state;
 
     return (
-      <div style={{ width: `750px`, height: `750px` }}>
-        <AirbnbMap
+      <div style={{ width: `650px`, height: `650px` }}>
+        <BaseMap
           defaultCenter={{
             lat: this.state.default.lat,
             lng: this.state.default.lng
@@ -92,7 +92,7 @@ class Map extends Component {
               rad: 600
             }}
            />
-        </AirbnbMap>
+       </BaseMap>
       </div>
     );
   }
